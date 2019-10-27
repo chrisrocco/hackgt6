@@ -10,6 +10,8 @@ const { getPolygonCentroid, isNumeric } = require('./helpers')
  */
 exports.extractPrices = async (event, context) => {
 
+    console.log('Received file: ', event.mediaLink)
+
     // This is where we will publish extracted image data.
     const outputTopic = 'projects/personal-178603/topics/hackgt-gas-price-image-data'
     const pubsub = new PubSub();

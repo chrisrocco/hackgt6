@@ -37,5 +37,5 @@ exports.extractPrices = async (event, context) => {
         data: objects
     }
     const messageBuffer = Buffer.from(JSON.stringify(messageObject), 'utf8');
-    topic.publish(messageBuffer);
+    await topic.publish(messageBuffer);
 }

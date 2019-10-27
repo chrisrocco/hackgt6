@@ -8,7 +8,7 @@ const { getPolygonCentroid, isNumeric } = require('./helpers')
  * @param {!Object} event Event payload.
  * @param {!Object} context Metadata for the event.
  */
-const extractPrices = async (event, context) => {
+exports.extractPrices = async (event, context) => {
 
     // This is where we will publish extracted image data.
     const outputTopic = 'projects/personal-178603/topics/hackgt-gas-price-image-data'
@@ -37,5 +37,3 @@ const extractPrices = async (event, context) => {
     const messageBuffer = Buffer.from(JSON.stringify(messageObject), 'utf8');
     topic.publish(messageBuffer);
 }
-
-module.exports = extractPrices
